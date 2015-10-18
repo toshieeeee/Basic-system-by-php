@@ -7,14 +7,11 @@
 <body>
 
 <?php
-
 try{
 	//データを変数に格納
-
 	$staff_name=$_POST['name'];
 	$staff_pass=$_POST['pass'];
 
-	//サニタイジング
 	$staff_name=htmlspecialchars($staff_name);
 	$staff_pass=htmlspecialchars($staff_pass);
 
@@ -30,7 +27,7 @@ try{
 
 
 	//SQLでコード追加
-	$sql = 'INSERT INTO mst_staff(name,password) VALUES (?,?)';
+	$sql = 'INSERT INTO mst_staff(name,password) VALUES(?,?)';
 	$stmt = $dbh->prepare($sql);
 	$data[] = $staff_name;
 	$data[] = $staff_pass;
@@ -39,7 +36,7 @@ try{
 	$dbh = null;//DBから切断
 
 	print $staff_name;
-	print'さんを追加しました。<br>';
+	print'さんを追加しました<br>';
 
 }
 

@@ -2,7 +2,7 @@
 
 	if(isset($_POST['disp'])==true){
 
-		if(isset($_POST['disp'])==false){
+		if(isset($_POST['staffcode'])==false){
 		header('Location:staff_ng.php');
 		}
 
